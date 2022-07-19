@@ -1,0 +1,27 @@
+<app-search-agent-input (onSearch)="search($event)" ></app-search-agent-input>
+
+
+<div class="btn-group" role="group" aria-label="Basic outlined example" style="width:10%; margin: 0 auto;margin-right:45%; margin-left:45%; margin-top: 150px;">
+    <button type="button" class="btn btn-outline-primary" (click)="onViewAgent()">Agent</button>
+    <button type="button" class="btn btn-outline-primary" (click)="onViewUser()">User</button>
+</div>
+
+
+<table>
+    <thead class="firstLine">
+        <td>Id</td>
+        <td>Nom</td>
+        <td>Prénom</td>
+        <td>Mail</td>
+        <td>Numéro de téléphone</td>
+        <td>Code AP</td>
+    </thead>
+    <tr *ngFor="let ag of agent$ | async "  >
+        <td>{{ag.id}}</td>
+        <td>{{ag.name}}</td>
+        <td>{{ag.firstName}}</td>
+        <td>{{ag.email}}</td>
+        <td>{{ag.phoneNumber}}</td>
+        <td>{{ag.codeAG}}</td>
+    </tr>
+</table>

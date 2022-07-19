@@ -1,0 +1,36 @@
+
+<div class="card">
+    <div style="width:35%; margin-top:5%; margin-left:60%; background-color: rgba(255,255,255,0.1); ">
+
+        <div card="card-body" style="margin-top:15%;margin-left:5%; margin-right:5%;">
+            <form  (ngSubmit)="login_agent(loginForm.value)" #loginForm="ngForm">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input type="email"  placeholder="E-mail"  [(ngModel)]="email" name="email"  required>
+                    </div>
+                </div>
+                <br>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input type="text"  placeholder="Code AG"  [(ngModel)]="codeAG" name="codeAG"  required>
+                    </div>
+                </div>
+                <br>
+                <div class="col-md-12" >
+                    <div class="form-group">
+                        <input type="password"  placeholder="Mot de passe"  [(ngModel)]="password" name="password"  required>
+                    </div>
+                </div>
+                <br>
+                <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-1 connexion-button"  style="margin: 0 auto; margin:  auto;" type="submit" [disabled]="!loginForm.form.valid" >Se connecter</button>
+                <br>
+                <a routerLink="/register-agent"><p style="float:right;">Créer un compte</p></a>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+
+

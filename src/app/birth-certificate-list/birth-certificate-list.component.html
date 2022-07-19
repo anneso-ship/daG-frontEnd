@@ -1,0 +1,14 @@
+<app-header></app-header>
+
+<app-search-input (onSearch)="search($event)"></app-search-input>
+
+<h1 style="margin-left: 25px;   margin-top: 230px; margin-right:2;">Acte de naissance enregistrés</h1>
+<a routerLink="/newBirthCertificate">
+    <img src="assets/image/birthCertificate/addDoc.png" style="width:60px; height:60px; margin-right:35px ;float:right; text-align:right;">
+</a>
+<app-birth-certificate *ngFor="let birthCertif of birthCertificate$ | async " [birthCertificate]="birthCertif"></app-birth-certificate>
+
+<ng-container *ngIf="(birthCertificate$ | async) as birthDocuments ">
+    <app-birth-certificate *ngFor="let birthCertif of birthCertificates; trackBy: trackByName;" [birthCertificate]="birthCertif"></app-birth-certificate>
+</ng-container>
+

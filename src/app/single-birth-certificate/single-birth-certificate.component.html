@@ -1,0 +1,80 @@
+
+<br>
+<button (click)="downloadAsPDF()"> Télécharger </button>
+<br>
+<div  id="birth-container"  *ngIf="birthCertificate$ | async as birthCertificate" >
+
+            <br>
+            <p style="margin-left: 20px">N° du document : {{birthCertificate.id}}</p>
+             <img class="sceau" src="assets/Symboles/téléchargement.png" >
+            <br>
+
+
+    <div class="child-container-informations"><br>
+        <h4>Informations sur l'enfant :</h4>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <strong>Nom :</strong> {{birthCertificate.name  | titlecase}}
+                <br>
+                <strong>Né(e) le : </strong>{{birthCertificate.birthDate | date:'d MMMM yyyy' }}
+                <br>
+                <strong>Nationalité : </strong> {{birthCertificate.nationality}}
+            </div>
+            <div class="col-md-6">
+                <strong>Prénom : </strong> {{birthCertificate.firstName | titlecase}}
+                <br>
+                <strong>Sexe : </strong> {{birthCertificate.gender}}
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+
+    <div class="mum-container-informations">
+        <h4>Informations sur la mère de l'enfant :</h4>
+        <hr class="mum">
+        <div class="row">
+                <div class="col-md-6">
+                    <strong>Nom :</strong> {{birthCertificate.nameMum  | titlecase}}
+                    <br>
+                    <strong>Né(e) le : </strong>{{birthCertificate.birthDateMum | date:'d MMMM yyyy' }}
+                    <br>
+                    <strong>Nationalité : </strong> {{birthCertificate.nationalityMum}}
+                </div>
+                <div class="col-md-6">
+                    <strong>Prénom : </strong> {{birthCertificate.firstNameMum | titlecase}}
+                    <br>
+                    <strong>Profession : </strong> {{birthCertificate.professionMum}}
+                </div>
+        </div>
+    </div>
+
+    <br><br>
+
+    <div class="dad-container-informations">
+        <h4>Informations sur le père de l'enfant :</h4>
+        <hr class="dad">
+        <div class="row" >
+                <div class="col-md-6">
+                    <strong>Nom : </strong>{{birthCertificate.nameDad}}
+                    <br>
+                    <strong>Né(e) le : </strong>{{birthCertificate.birthDateDad | date:'d MMMM yyyy' }}
+                    <br>
+                    <strong>Nationalité : </strong> {{birthCertificate.nationalityDad}}
+                </div>
+                <div class="col-md-6">
+                    <strong>Prénom : </strong> {{birthCertificate.firstNameDad  | titlecase}}
+                    <br>
+                    <strong>Profession : </strong> {{birthCertificate.professionDad}}
+                </div>
+        </div>
+    </div>
+    <br><br>
+
+</div>
+<br><br>
+<a routerLink="/birthCertificateDisplay">Back</a>
+<br><br>
+
+

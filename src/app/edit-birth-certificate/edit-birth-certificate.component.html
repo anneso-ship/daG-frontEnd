@@ -1,0 +1,178 @@
+<p>edit-birth-certificate works!</p>
+
+<div class="birth-container" id="pdfDoc" #pdfDoc *ngIf="birthCertificate$ | async as birthCertificate" >
+    <br>
+    <p style="margin-left: 20px">N° du document : {{birthCertificate.id}}</p>
+    <img class="sceau" src="assets/Symboles/téléchargement.png" >
+
+
+    <hr>
+    <form (ngSubmit)="update(editFormBirthCertificate)" #editFormBirthCertificate="ngForm" >
+
+            <br>
+            <div class="child-container-informations">
+                <h4>Informations sur l'enfant de l'enfant :</h4>
+                <hr>
+                <br>
+
+                <div class="row" >
+                    <div class="col-md-3">
+                        <label><strong>Nom :</strong></label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" value={{birthCertificate.name}} name="name" [(ngModel)]=birthCertificate.name >
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label><strong>Prénom : </strong></label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" value={{birthCertificate.firstName}} name="firstName" [(ngModel)]=birthCertificate.firstName >
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label><strong>Sexe :</strong></label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" value={{birthCertificate.gender}} name="gender" [(ngModel)]=birthCertificate.gender >
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label><strong>Né(e) le  :</strong></label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="date" class="form-control" value={{birthCertificate.birthDate}} name="birthDate" [(ngModel)]=birthCertificate.birthDate >
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label><strong>Nationalité : </strong></label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" value={{birthCertificate.nationality}} name="nationality" [(ngModel)]=birthCertificate.nationality>
+                    </div>
+                </div>
+                <br>
+            </div>
+
+
+        <div class="mum-container-informations"><br>
+            <h4>Informations sur la mère de l'enfant :</h4>
+            <hr>
+            <br>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <label><strong>Nom :</strong></label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" value={{birthCertificate.nameMum}} name="nameMum" [(ngModel)]=birthCertificate.nameMum >
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-3">
+                    <label><strong>Prénom : </strong></label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" value={{birthCertificate.firstNameMum}} name="firstNameMum" [(ngModel)]=birthCertificate.firstNameMum >
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-3">
+                    <label><strong>Né(e) le  :</strong></label>
+                </div>
+                <div class="col-md-9">
+                    <input type="date" class="form-control" value={{birthCertificate.birthDateMum}} [(ngModel)]=birthCertificate.birthDateMum name="birthDateMum" >
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-3">
+                    <label><strong>Profession :</strong></label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" value={{birthCertificate.professionMum}} [(ngModel)]=birthCertificate.professionMum name="professionMum" >
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-3">
+                    <label><strong>Nationalité : </strong></label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" value={{birthCertificate.nationalityMum}} [(ngModel)]=birthCertificate.nationalityMum name="nationalityMum"  >
+                </div>
+            </div>
+            <br><br>
+        </div>
+
+            <br><br>
+            <div class="dad-container-informations">
+                <h4>Informations sur la mère de l'enfant :</h4>
+                <hr>
+                <br>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label><strong>Nom :</strong></label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" value={{birthCertificate.nameDad}} [(ngModel)]=birthCertificate.nameDad name="nameDad" >
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label><strong>Prénom : </strong></label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" value={{birthCertificate.firstNameDad}} [(ngModel)]=birthCertificate.firstNameDad name="firstNameDad"  >
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label><strong>Né(e) le  :</strong></label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="date" class="form-control" value={{birthCertificate.birthDateDad}} [(ngModel)]=birthCertificate.birthDateDad name="birthDateDad" >
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label><strong>Profession :</strong></label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" value={{birthCertificate.professionDad}} [(ngModel)]=birthCertificate.professionDad name="professionDad"  >
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label><strong>Nationalité : </strong></label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" value= {{birthCertificate.nationalityDad}} [(ngModel)]=birthCertificate.nationalityDad name="nationalityDad"  >
+                    </div>
+                </div>
+                <br><br>
+            </div>
+
+        <br>
+        <button type="submit" style="margin-left: 20px; ">Modifier</button>
+        <br><br>
+
+    </form>
+
+</div>
+<br><br>
+<a routerLink="/birthCertificateDisplay">Back</a>

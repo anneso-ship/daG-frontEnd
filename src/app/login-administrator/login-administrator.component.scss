@@ -1,0 +1,54 @@
+.content{
+    margin: 0 auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      width:100%;
+      height:100%;
+      position: fixed;
+      background-image : url('/assets/admin-connect.png');
+      background-repeat : no-repeat;
+      background-position:fixed;
+      background-size:100%;
+}
+
+.form-content{
+    width:30%;
+    margin: 0 auto;
+    border: 1px solid #484F84;
+    margin-top: 10%;
+    background-color: rgba(0,0,0,0.55);
+
+}
+h3{
+    color:red;
+    text-align:center;
+}
+button, input{
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+input{
+    border:0;
+      border-bottom:1px solid #555;
+      background:transparent;
+      //width:100%;
+      padding:8px 0 5px 0;
+      font-size:16px;
+      color:#fff;
+}
+button{
+    height: 45px;
+    border-radius: 20px 20px 20px 20px;
+    border: 1px solid red;
+    color:red;
+    background:transparent;
+}
+
+
+
+
+
+

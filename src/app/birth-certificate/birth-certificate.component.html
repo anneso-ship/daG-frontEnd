@@ -1,0 +1,34 @@
+
+<div class="birth-container" >
+    <br>
+    <div class="child-container-informations" >
+        <div class="row">
+            <div class="col-md-8" >
+                <br>
+                <p>{{birthCertificate.name  | titlecase}} {{birthCertificate.firstName | titlecase}}
+                    <br>
+                    <strong>Né(e) le </strong>
+                    {{birthCertificate.birthDate | date:'d MMMM yyyy' }}</p>
+            </div>
+            <div class="col-md-4" >
+                <img class="sceau" src="assets/Symboles/téléchargement.png" >
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div class="row">
+        <div class="col-md-6">
+            <button class="view" type="button" (click)="onViewBirthCertificate()">VOIR</button>
+        </div>
+        <div class="col-md-6">
+            <img class="editIcon" src="/assets/birthCertificate/edit_icon.png" (click)="onEditBirthCertificate()"/>
+        </div>
+    </div>
+
+    <br>
+</div>
+
+
+
+

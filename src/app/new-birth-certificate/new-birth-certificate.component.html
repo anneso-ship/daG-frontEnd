@@ -1,0 +1,197 @@
+<h2 >Nouvel Acte de Naissance</h2>
+
+<div class="container" >
+    <div class="row">
+        <div class="col-md-5">
+            <div class="form-card">
+
+                <br>
+                <form [formGroup]="birthCertificateForm">
+
+
+                        <h5>Informations sur l'enfant :</h5>
+                    <br>
+                        <!-- INFORMATIONS SUR L'ENFANT -->
+                        <div class="form-group" >
+                            <input id="name" placeholder="Nom de l'enfant" type="text" formControlName="name" >
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <input id="firstName" placeholder="Prénom de l'enfant" type="text" formControlName="firstName">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <select  placeholder="Genre" id="gender" type="text" formControlName="gender" >
+                                <option>M</option>
+                                <option>F</option>
+                            </select>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <input id="birthDate" type="date" formControlName="birthDate" style=" width:50%;">
+                        </div>
+                    <br>
+                        <div class="form-group">
+                            <input id="nationality" placeholder="Nationalité de l'enfant" type="text" formControlName="nationality" >
+                        </div>
+                        <br><br>
+
+                    <h5>Informations sur la mère de l'enfant :</h5>
+                    <br>
+                    <!-- INFORMATIONS SUR LA MERE DE L'ENFANT -->
+                    <div class="form-group" >
+                        <input id="nameMum" placeholder="Nom de la mère" type="text" formControlName="nameMum" style="width:90%;">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input id="firstNameMum" placeholder="Prénom de la mère" type="text" formControlName="firstNameMum">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input id="birthDateMum" type="date" formControlName="birthDateMum" style=" width:50%;">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input id="professionMum" type="text" formControlName="professionMum" placeholder="Profession de la mère">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input id="nationalityMum" placeholder="Nationalité du mère" type="text" formControlName="nationalityMum">
+                    </div>
+                    <br><br>
+
+                    <h5>Informations sur le père l'enfant :</h5>
+                    <br>
+                    <!-- INFORMATIONS SUR LE PERE DE L'ENFANT -->
+                    <div class="form-group" >
+                        <input id="nameDad" placeholder="Nom de le père" type="text" formControlName="nameDad" >
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input id="firstNameDad" placeholder="Prénom du père" type="text" formControlName="firstNameDad">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input id="birthDateDad" type="date" style=" width:50%;" formControlName="birthDateDad">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input id="professionDad" type="text"  placeholder="Profession du père" formControlName="professionDad">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input id="nationalityDad" placeholder="Nationalité du père" type="text" formControlName="nationalityDad" >
+                    </div>
+                    <br>
+                    <br>
+                    <div class="action-buttons">
+                        <button type="submit" (click)="onSubmitForm()">Enregistrer</button>
+                    </div>
+                    <br>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md-7">
+            <div class="birth-certificate-card" *ngIf="birthCertificatePreview$ | async as birthCertificate">
+                <img class="sceau" src="assets/Symboles/téléchargement.png" >
+                <hr>
+
+                <div class="child-container-informations">
+                    <h4>Informations sur l'enfant :</h4>
+                    <hr>
+                    <table  cellspacing="2" cellpadding="2">
+                        <tr>
+                            <td>
+                                <strong>Nom :</strong>
+                                {{birthCertificate.name  | titlecase}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Prénom : </strong>
+                                {{birthCertificate.firstName | titlecase}}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Sexe : </strong>
+                                {{birthCertificate.gender}}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Date de naissance : </strong>
+                                {{birthCertificate.birthDate | date:'d MMMM yyyy, à HH:mm' }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Nationalité : </strong>
+                                {{birthCertificate.nationality }}</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <br>
+                <div class="mum-container-informations">
+                    <h4>Informations sur la mère de l'enfant :</h4><hr>
+                    <table cellspacing="2" cellpadding="2">
+                        <tr>
+                            <td>
+                                <strong>Nom : </strong>
+                                {{birthCertificate.nameMum}}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Prénom : </strong>
+                                {{birthCertificate.firstNameMum}}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Né(e) le : </strong>{{birthCertificate.birthDateMum | date:'d MMMM yyyy, à HH:mm' }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Profession :</strong> {{birthCertificate.professionMum}}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Nationalité : </strong>
+                                {{birthCertificate.nationalityMum }}</td>
+                        </tr>
+                    </table>
+                </div>
+                <br>
+
+                <div class="dad-container-informations">
+                    <h4>Informations sur le père de l'enfant :</h4><hr>
+                    <table >
+                        <tr>
+                            <td>
+                                <strong>Nom : </strong>{{birthCertificate.nameDad}}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Prénom :</strong> {{birthCertificate.firstNameDad}}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Né(e) le</strong> {{birthCertificate.birthDateDad | date:'d MMMM yyyy, à HH:mm' }} </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Profession :</strong> {{birthCertificate.professionDad}}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Nationalité : </strong>
+                                {{birthCertificate.nationalityDad }}</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <br><br><br>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br><br>
