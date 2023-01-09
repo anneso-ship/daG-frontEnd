@@ -4,22 +4,30 @@ table{
     margin-left: 2.5%;
     margin-right: 2.5%;
     border-radius: 20px 20px 20px 20px;
-    width: 95%;
+    width: 90%;
     font-size: 18px;
 
 }
+
 .firstLine{
     background-color: black;
     font-size: 20px;
     color: rgb(0,255,0);
+    border: 1px solid rgb(0,255,0);
+    td{
+              border: 1px solid rgb(0,255,0);
+        }
 }
 th, td{
-  border: 1px solid #e3e3e3;
-  padding: 20px;
+  padding: 15px;
 
 }
 
 tr:hover{
     background-color: #ebebeb;
+    td{
+            border: 1px solid rgb(255,255,255);
+
+        }
 }
 

@@ -14,7 +14,7 @@ import { Administrator } from '../model/administrator.model';
 })
 export class LoginAdministratorComponent implements OnInit {
 
-    username:string;
+    identifier:string;
        password:string;
        error:boolean;
 
@@ -25,7 +25,7 @@ export class LoginAdministratorComponent implements OnInit {
   }
 
    login(loginForm:any){
-        this.auth.loginAdmin(this.username,this.password).subscribe(
+        this.auth.loginAdmin(this.identifier,this.password).subscribe(
           (agent)=>{
               this.router.navigateByUrl("agent-info-list")
           },

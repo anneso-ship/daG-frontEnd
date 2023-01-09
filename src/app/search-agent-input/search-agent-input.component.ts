@@ -17,7 +17,11 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 })
 export class SearchAgentInputComponent implements OnInit ,OnDestroy {
 
-  constructor() { }
+
+
+  constructor() {
+
+  }
 
    docSaved : number;
 
@@ -41,5 +45,8 @@ export class SearchAgentInputComponent implements OnInit ,OnDestroy {
    public ngOnDestroy(): void {
         this.searchSubscription.unsubscribe();
       }
+
+
+
 
 }

@@ -20,7 +20,7 @@ import { AgentDisplayComponent } from './agent-display/agent-display.component';
 import { UserDisplayComponent } from './user-display/user-display.component';
 import { SearchAgentInputComponent } from './search-agent-input/search-agent-input.component';
 import { LoginAgentComponent } from './login-agent/login-agent.component';
-
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -45,7 +45,8 @@ import { LoginAgentComponent } from './login-agent/login-agent.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,9 +1,12 @@
 export class User{
-     id?:number;
-     name:string;
-     firstName:string;
-     mail:string;
-     phoneNumber:string;
-     codeUR:number;
-     Password:string;
+    id?:number;
+        name:string;
+        firstName:string;
+        identifier:string;
+        password:string;
+        email:string;
+        phoneNumber:string;
+        role:string;
+        requestProcessStatus:string;
+
 }

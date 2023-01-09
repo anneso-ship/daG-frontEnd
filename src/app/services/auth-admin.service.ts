@@ -9,10 +9,10 @@ export class AuthAdminService {
 
   constructor(private http: HttpClient) { }
 
-   loginAdmin( username:string , password: string){
+   loginAdmin( identifier:string , password: string){
 
                  let Adminconnect = {
-                     username:username,
+                     identifier:identifier,
                      password: password
                  }
                  console.log(Adminconnect);

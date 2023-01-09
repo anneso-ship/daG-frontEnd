@@ -9,19 +9,21 @@
 
 <table>
     <thead class="firstLine">
-        <td>Id</td>
+        <td>Numéro d'identification</td>
         <td>Nom</td>
         <td>Prénom</td>
-        <td>Mail</td>
+        <td>Adresse mail</td>
         <td>Numéro de téléphone</td>
-        <td>Code AP</td>
+        <td>Role</td>
+        <td>Status des processus</td>
     </thead>
     <tr *ngFor="let ag of agent$ | async "  >
-        <td>{{ag.id}}</td>
+        <td>{{ag.identifier}}</td>
         <td>{{ag.name}}</td>
         <td>{{ag.firstName}}</td>
         <td>{{ag.email}}</td>
         <td>{{ag.phoneNumber}}</td>
-        <td>{{ag.codeAG}}</td>
+        <td><i><strong>{{ag.role}}</strong></i></td>
+        <td>{{ag.statusProcess}}</td>
     </tr>
 </table>

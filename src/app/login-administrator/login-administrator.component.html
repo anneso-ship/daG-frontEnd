@@ -5,7 +5,7 @@
         <h3>Admin connexion</h3>
         <br>
         <form (ngSubmit)="login(loginForm.value)" #loginForm="ngForm">
-            <input type="text" placeholder="Nom d'utilisateur"  [(ngModel)]="username" name="UserName"  required>
+            <input type="text" placeholder="Numéro d'identification"  [(ngModel)]="identifier" name="Identifier"  required>
             <br><br>
             <input type="password" placeholder="Mot de passe"  [(ngModel)]="password" name="password"  required>
             <br><br><br>

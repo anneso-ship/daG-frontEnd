@@ -12,7 +12,6 @@ import { AgentDisplayComponent } from './agent-display/agent-display.component';
 import { UserDisplayComponent } from './user-display/user-display.component';
 import { LoginAgentComponent } from './login-agent/login-agent.component';
 
-
 const routes: Routes = [
   {path: '', component:WelcomeComponent},
   {path: 'birthCertificateDisplay', component: BirthCertificateListComponent},
@@ -24,7 +23,7 @@ const routes: Routes = [
   {path: 'administratorLogin', component:LoginAdministratorComponent},
   {path: 'agent-info-list', component:AgentDisplayComponent},
   {path: 'user-info-list', component:UserDisplayComponent},
-  {path: 'agent-login', component:LoginAgentComponent}
+  {path: 'officer-login', component:LoginAgentComponent}
 ];
 
 @NgModule({
