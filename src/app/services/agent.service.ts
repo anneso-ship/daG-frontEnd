@@ -15,12 +15,12 @@ export class AgentService {
          return this.http.get<Agent[]>('http://localhost:8080/agent/get_agents_details');
     }
 
-         loginAgent( email:string , codeAG:string,password: string){
+         loginAgent( email:string , identifier:string,password: string){
 
                  let ConnectiionAgentAttempt = {
                      email:email,
                      password: password,
-                     codeAG: codeAG
+                     identifier: identifier
                  }
                  console.log(ConnectiionAgentAttempt);
                  return this.http.post<any>(`http://localhost:8080/agent/authenticate`,ConnectiionAgentAttempt);

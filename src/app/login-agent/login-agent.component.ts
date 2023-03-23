@@ -12,7 +12,7 @@ export class LoginAgentComponent implements OnInit {
 
        email:string;
        password:string;
-       codeAG: string;
+       identifier: string;
        error:boolean;
 
 
@@ -23,7 +23,7 @@ export class LoginAgentComponent implements OnInit {
   }
 
     login_agent(loginForm:any){
-          this.agentService.loginAgent(this.email,this.codeAG,this.password).subscribe(
+          this.agentService.loginAgent(this.email,this.identifier,this.password).subscribe(
             (agent)=>{
                 this.router.navigateByUrl("birthCertificateDisplay")
             },

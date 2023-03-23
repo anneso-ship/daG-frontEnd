@@ -21,6 +21,7 @@ import { UserDisplayComponent } from './user-display/user-display.component';
 import { SearchAgentInputComponent } from './search-agent-input/search-agent-input.component';
 import { LoginAgentComponent } from './login-agent/login-agent.component';
 import { ToastrModule } from 'ngx-toastr';
+import { RegisterAdminComponent } from './register-admin/register-admin.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ToastrModule } from 'ngx-toastr';
     AgentDisplayComponent,
     UserDisplayComponent,
     SearchAgentInputComponent,
-    LoginAgentComponent
+    LoginAgentComponent,
+    RegisterAdminComponent
 
   ],
   imports: [
