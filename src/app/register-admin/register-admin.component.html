@@ -1,0 +1,45 @@
+
+<div class="form-container">
+    <h4 class="modal-title" >Inscription administrateur</h4><br>
+    <form>
+
+       <div class="row">
+           <div class="col-md-6">
+               <!--<label for="exampleInputEmail1" class="form-label">Nom</label>-->
+               <input type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Nom">
+           </div>
+           <div class="col-md-6">
+               <!--<label for="exampleInputEmail1" class="form-label">Prénom</label>-->
+               <input type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Prénom">
+           </div>
+       </div>
+        <br>
+        <div class="mb-3">
+            <!--<label for="exampleInputEmail1" class="form-label">Email address</label>-->
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Adresse éléctronique">
+            <div id="emailHelp" class="form-text" style="color:red;">Nous ne partagerons jamais votre e-mail avec quelqu'un d'autre.</div>
+        </div>
+        <div class="mb-3">
+            <!--<label for="exampleInputEmail1" class="form-label">Numéro de téléphone</label>-->
+            <input type="tel" class="form-control" placeholder="Numéro de Téléphone" >
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <!--<label for="exampleInputPassword1" class="form-label">Password</label>-->
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mot de passe">
+            </div>
+            <div class="col-md-6">
+                <!--<label for="exampleInputPassword1" class="form-label">Confirm Password</label>-->
+                <input type="password" class="form-control" id="copyExampleInputPassword1" placeholder="Confirmer mot de passe">
+            </div>
+        </div>
+        <br>
+        <label  class="form-label">Type de profil (role)</label>
+        <select class="form-select form-select-lg " aria-label=".form-select-sm example">
+            <option value="administrateur">Administrateur</option>
+        </select>
+
+        <br><br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

@@ -20,46 +20,27 @@ export class AgentDisplayComponent implements OnInit {
     @Input()
     public agents: Agent[] = [];
 
+    selectedPage: string;
+
+
     agent$! : Observable<Agent[]>;
 
-           public readonly trackByName: (index:number, item: Agent) => string = (
-              index: number,
-              item: Agent
-            ) => item.name;
-
-          private readonly searchFilter: BehaviorSubject<string> = new BehaviorSubject('');
-
-            private readonly searchText$: Observable<string> = this.searchFilter.asObservable();
 
   constructor(private agentService: AgentService,
   private router : Router) { }
 
   ngOnInit(): void {
-        //this.agent$=this.agentService.getAllAgent();
+        this.agent$=this.agentService.getAllAgent();
 
-             const listOfAgent$: Observable<Agent[]> = this.agentService.getAllAgent();
-                        this.agent$ = combineLatest([listOfAgent$, this.searchText$]).pipe(
-                          map(([list, search]: [Agent[], string]) =>
-                            this.filterByName(list, search)
-                          )
-                        );
 
 
   }
 
-     public search(value: string): void {
-            this.searchFilter.next(value);
-          }
+  navigateToPage() {
+    this.router.navigate([this.selectedPage]);
+  }
 
-          private filterByName(list: Agent[], searchTerm: string): Agent[] {
-            if (searchTerm === '') return list;
 
-            return list.filter(
-              (item: Agent) =>
-                item.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1 ||
-                item.firstName.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1
-            );
-          }
 
 
   onViewUser() {

@@ -12,6 +12,8 @@ import { AgentDisplayComponent } from './agent-display/agent-display.component';
 import { UserDisplayComponent } from './user-display/user-display.component';
 import { LoginAgentComponent } from './login-agent/login-agent.component';
 import { RegisterAdminComponent } from './register-admin/register-admin.component';
+import { RegisterAgentComponent } from './register-agent/register-agent.component';
+import { ListAgentRequestComponent } from './list-agent-request/list-agent-request.component';
 
 const routes: Routes = [
   {path: '', component:WelcomeComponent},
@@ -25,7 +27,9 @@ const routes: Routes = [
   {path: 'agent-info-list', component:AgentDisplayComponent},
   {path: 'user-info-list', component:UserDisplayComponent},
   {path: 'officer-login', component:LoginAgentComponent},
-  {path: 'register-administrator', component:RegisterAdminComponent}
+  {path: 'register-administrator', component:RegisterAdminComponent},
+  {path: 'register-agent', component:RegisterAgentComponent},
+  {path: 'requests-agent', component:ListAgentRequestComponent}
 ];
 
 @NgModule({

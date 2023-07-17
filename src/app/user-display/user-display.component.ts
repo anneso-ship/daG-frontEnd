@@ -13,6 +13,8 @@ export class UserDisplayComponent implements OnInit {
 
      user$! : Observable<User[]>;
 
+      selectedPage: string;
+
   constructor(private userService: UserService,
   private router : Router) { }
 
@@ -27,5 +29,11 @@ export class UserDisplayComponent implements OnInit {
           onViewAgent() {
                         this.router.navigateByUrl(`agent-info-list`);
                   }
+
+
+             navigateToPage() {
+               this.router.navigate([this.selectedPage]);
+             }
+
 
 }

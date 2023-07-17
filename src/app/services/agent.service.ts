@@ -15,16 +15,35 @@ export class AgentService {
          return this.http.get<Agent[]>('http://localhost:8080/agent/get_agents_details');
     }
 
-         loginAgent( email:string , identifier:string,password: string){
+    getRequest(): Observable<Agent[]>{
+        return this.http.get<Agent[]>('http://localhost:8080/agent/getRequest');
+    }
 
-                 let ConnectiionAgentAttempt = {
-                     email:email,
-                     password: password,
-                     identifier: identifier
-                 }
-                 console.log(ConnectiionAgentAttempt);
-                 return this.http.post<any>(`http://localhost:8080/agent/authenticate`,ConnectiionAgentAttempt);
-            }
+    loginAgent( email:string , identifier:string,password: string){
+
+        let ConnectiionAgentAttempt = {
+             email:email,
+             password: password,
+             identifier: identifier
+        }
+        console.log(ConnectiionAgentAttempt);
+        return this.http.post<any>(`http://localhost:8080/agent/authenticate`,ConnectiionAgentAttempt);
+    }
+
+          addAgent( name: string,firstName: string,email:string,
+                    password: string,phoneNumber:string,role:string){
+
+               let RegisterAgentAttempt = {
+                   name: name,
+                   firstName: firstName,
+                   email:email,
+                   password: password,
+                   phoneNumber:phoneNumber,
+                   role:role
+               }
+               console.log(RegisterAgentAttempt);
+               return this.http.post<any>(`http://localhost:8080/agent/agentRegistration`,RegisterAgentAttempt);
+          }
 
 
 }

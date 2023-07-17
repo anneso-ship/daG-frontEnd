@@ -1,12 +1,36 @@
-<app-search-agent-input ></app-search-agent-input>
+
+<nav class="navbar" style="background-color: rgb(0,255,240);">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img width="100" margin-left="2" height="85" src="assets/image/Logo/Logo_black.png" alt="Logo"></a>
+        <div class="input-group" style="width:35%; ">
+            <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username with two button addons">
+            <button class="btn btn-outline-secondary" type="button">Rechercher</button>
+        </div>
+        <div class="navbar-nav ms-auto">
+            <div class="dropdown" >
+                <select class="form-select" aria-label="Default select example"  [(ngModel)]="selectedPage" (ngModelChange)="navigateToPage()" style="margin-top:5px;">
+                    <option value="/agent-info-list">Liste des agents</option>
+                    <option value="/user-info-list">Liste des utilisateurs</option>
+                    <option value="2">Demandes d'inscription des agents</option>
+                    <option value="3">Demandes d'inscription des utilisateurs</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="navbar-nav ms-auto">
+            <div class="row">
+                <div class="col-md-3">
+                    <a class="nav-link" href="#"><img src="assets/Symboles/settings.png" alt="Paramètres" width="50" height="50"></a>
+                </div>
+                <div class="col-md-3">
+                    <a class="nav-link" href="#"><img src="assets/Symboles/deconnexion.png" alt="Déconnexion" width="90" height="50"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
 
 
-
-
-<div class="btn-group" role="group" aria-label="Basic outlined example" style="width:10%; margin: 0 auto;margin-right:45%; margin-left:45%; margin-top: 150px;">
-    <button type="button" class="btn btn-outline-primary" (click)="onViewAgent()">Agent</button>
-    <button type="button" class="btn btn-outline-primary" (click)="onViewUser()">User</button>
-</div>
 
 
 <table>

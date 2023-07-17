@@ -1,0 +1,50 @@
+<p>register-agent works!</p>
+
+<div class="form-container">
+    <h4 class="modal-title" >Inscription agent</h4><br>
+    <form (ngSubmit)="registrationAgent(registerForm.value)" #registerForm="ngForm" >
+
+        <div class="row">
+            <div class="col-md-6">
+                <!--<label for="exampleInputEmail1" class="form-label">Nom</label>-->
+                <input type="text" required class="form-control"  name="lastname" [(ngModel)]="name" placeholder="Nom">
+            </div>
+            <div class="col-md-6">
+                <!--<label for="exampleInputEmail1" class="form-label">Prénom</label>-->
+                <input type="text" class="form-control"  name="firstname" [(ngModel)]="firstName" placeholder="Prénom">
+            </div>
+        </div>
+        <br>
+        <div class="mb-3">
+            <!--<label for="exampleInputEmail1" class="form-label">Email address</label>-->
+            <input type="email" class="form-control" id="exampleInputEmail1" name="e-mail" [(ngModel)]="email" placeholder="Adresse éléctronique">
+            <div id="emailHelp" class="form-text" style="color:red;">Nous ne partagerons jamais votre e-mail avec quelqu'un d'autre.</div>
+        </div>
+        <div class="mb-3">
+            <!--<label for="exampleInputEmail1" class="form-label">Numéro de téléphone</label>-->
+            <input type="tel" class="form-control" name="phonenumber" [(ngModel)]="phoneNumber" placeholder="Numéro de Téléphone" >
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <!--<label for="exampleInputPassword1" class="form-label">Password</label>-->
+                <input type="password" class="form-control" name="Password" [(ngModel)]="password" placeholder="Mot de passe">
+            </div>
+            <div class="col-md-6">
+                <!--<label for="exampleInputPassword1" class="form-label">Confirm Password</label>-->
+                <input type="password" class="form-control" name="PasswordCopy" [(ngModel)]="password_copy" placeholder="Confirmer mot de passe">
+            </div>
+        </div>
+        <br>
+        <label  class="form-label">Type de profil (role)</label>
+        <select class="form-select form-select-lg " aria-label=".form-select-sm example" name="Role" [(ngModel)]="role">
+            <option value="agent">Agent</option>
+        </select>
+        <br>
+        <div *ngIf=" error_passwordCompare==true" role="alert" style="margin-left:auto; margin-right:auto;"><p style="color:red"><strong>Les mots de passe ne sont pas identiques</strong></p></div>
+
+
+        <br><br>
+        <button type="submit" [disabled]="!registerForm.form.valid" class="btn btn-primary">Valider</button>
+    </form>
+</div>
+

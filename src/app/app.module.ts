@@ -18,10 +18,11 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { LoginAdministratorComponent } from './login-administrator/login-administrator.component';
 import { AgentDisplayComponent } from './agent-display/agent-display.component';
 import { UserDisplayComponent } from './user-display/user-display.component';
-import { SearchAgentInputComponent } from './search-agent-input/search-agent-input.component';
 import { LoginAgentComponent } from './login-agent/login-agent.component';
 import { ToastrModule } from 'ngx-toastr';
 import { RegisterAdminComponent } from './register-admin/register-admin.component';
+import { RegisterAgentComponent } from './register-agent/register-agent.component';
+import { ListAgentRequestComponent } from './list-agent-request/list-agent-request.component';
 
 @NgModule({
   declarations: [
@@ -37,9 +38,10 @@ import { RegisterAdminComponent } from './register-admin/register-admin.componen
     LoginAdministratorComponent,
     AgentDisplayComponent,
     UserDisplayComponent,
-    SearchAgentInputComponent,
     LoginAgentComponent,
-    RegisterAdminComponent
+    RegisterAdminComponent,
+    RegisterAgentComponent,
+    ListAgentRequestComponent
 
   ],
   imports: [
